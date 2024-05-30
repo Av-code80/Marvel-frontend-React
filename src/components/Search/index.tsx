@@ -21,14 +21,16 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
     }
   };
 return (
-  <TextField
-    theme={Theme.dark}
-    placeholder='Search ...'
-    value={searchTerm}
-    icon={mdiMagnify}
-    onChange={handleSearch}
-    onKeyDown={handleKeyDown}
-  />
+  <div className='search-field'>
+    <TextField
+      theme={Theme.dark}
+      placeholder='Search ...'
+      value={searchTerm}
+      icon={mdiMagnify}
+      onChange={(_, value: string) => handleSearch(value)}
+      onKeyDown={handleKeyDown}
+    />
+  </div>
 );
   
 };

@@ -1,25 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FlexBox, Alignment } from '@lumx/react';
 import Search from '../Search';
-import { get } from '../../api';
+import './index.scss';
 
-const Header = () => {
-  const getData = async () => {
-    const response = await get('/characters');
-    console.log(response, 'response');
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const Header = ({ onSearch }) => {
   return (
     <header className='lumx-spacing-padding-big header'>
       <FlexBox vAlign={Alignment.right}>
         <img src='logo512.png' alt='Marvel' style={{ height: '50px' }} />
-        <Search onSearch={function (query: string): void {
-          throw new Error('Function not implemented.');
-        } } />
+        <Search onSearch={onSearch} />
       </FlexBox>
     </header>
   );
