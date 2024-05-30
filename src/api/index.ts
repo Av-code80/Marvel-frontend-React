@@ -9,7 +9,7 @@ const baseQueryParams = {
   apikey: process.env.REACT_APP_MARVEL_API_KEY,
 };
 
-const get = (url, query) => instance.get(url, {
+const get = (url:string, query?:object) => instance.get(url, {
   params: {
     ...query,
     ...baseQueryParams,

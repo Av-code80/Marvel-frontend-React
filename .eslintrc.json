@@ -1,31 +1,55 @@
 {
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "eslint:recommended",
-    "react-app"
-  ],
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "node": true,
-    "es6": true
+    "browser": true
   },
+  "extends": ["plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
+  "plugins": ["react"],
   "rules": {
-    "curly": "warn",
-    "react/jsx-indent": [
-      2,
-      "tab"
+    "prettier/prettier": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-empty-interface": "off",
+    "react/no-unescaped-entities": "off",
+    // Possible errors
+    "no-console": "warn",
+    "react/prop-types": "off",
+    // Best practices
+    "dot-notation": "error",
+    "no-else-return": "error",
+    "no-floating-decimal": "error",
+    "no-sequences": "error",
+
+    // ES6
+    "array-callback-return": "off",
+
+    // Imports
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": "off",
+    "no-prototype-builtins": "off",
+    // REACT
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/href-no-hash": [0],
+    "react/display-name": "off",
+    "react/no-unsafe": [
+      "error",
+      {
+        "checkAliases": true
+      }
     ],
-    "react/jsx-indent-props": [
-      2,
-      "tab"
-    ],
-    "no-tabs": "off",
-    "max-len": "off"
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
