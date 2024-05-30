@@ -13,7 +13,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-// src/index.scss
 body {
   font-family: Arial, sans-serif;
 }
@@ -64,6 +63,47 @@ body {
   align-items: center;
   margin: 20px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  button {
+    background-color: #e62429;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover:not(:disabled) {
+      background-color: #c51d24;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background-color: #000;
+    }
+
+    &.pagination-nav {
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+  }
+
+  span {
+    margin: 0 5px;
+    padding: 10px 20px;
+  }
+}
+
 
 @import './App/App.scss';
 @import './components/Header/index.scss';
