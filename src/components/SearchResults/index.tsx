@@ -21,12 +21,18 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
   useEffect(() => {
     const fetchCharacters = async () => {
       if (query) {
-        const response = await get('characters', {
-          nameStartsWith: query,
-          limit: 4,
-        });
-        const { results } = response.data.data;
-        setCharacters(results);
+        try {
+          const response = await get('characters', {
+            nameStartsWith: query,
+            limit: 4,
+          });
+          const { results } = response.data.data;
+          setCharacters(results);
+        } catch (error) {
+          console.error('Error fetching characters:', error);
+        }
+      } else {
+        setCharacters([]);
       }
     };
 

@@ -6,8 +6,8 @@ import './index.scss';
 const Header = ({ onSearch }) => {
   return (
     <header className='lumx-spacing-padding-big header'>
-      <FlexBox vAlign={Alignment.right}>
-        <img src='logo512.png' alt='Marvel' style={{ height: '50px' }} />
+      <FlexBox vAlign={Alignment.center} hAlign={Alignment.spaceBetween}>
+        <img src='logo512.png' alt='Marvel' className='header-logo' />
         <Search onSearch={onSearch} />
       </FlexBox>
     </header>
