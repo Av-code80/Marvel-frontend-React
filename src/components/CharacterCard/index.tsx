@@ -1,20 +1,13 @@
 import React from 'react';
-import { Chip, ChipGroup, Size, Thumbnail, AspectRatio } from '@lumx/react';
+import { Chip, ChipGroup, Size } from '@lumx/react';
+import { Character } from '../../common/interface';
 import './index.scss';
 
 interface CharacterCardProps {
-  character: {
-    id: number;
-    name: string;
-    description: string;
-    thumbnail: { path: string; extension: string };
-    comics: { available: number };
-    series: { available: number };
-    stories: { available: number };
-  };
+  character: Character
 }
 
-const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
+const CharacterCard: React.FC<CharacterCardProps> = ({ character}) => {
   return (
     <div className='character-card'>
       <div className='character-thumbnail'>
