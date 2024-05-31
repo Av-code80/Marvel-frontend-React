@@ -1,4 +1,5 @@
 import React from 'react';
+import { AspectRatio, Chip, ChipGroup, Size, Thumbnail } from '@lumx/react';
 import './index.scss';
 
 interface CharacterCardProps {
@@ -16,15 +17,23 @@ interface CharacterCardProps {
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
     <div className='character-card'>
-      <img
-        src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+      <Thumbnail
+        image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
         alt={character.name}
+        aspectRatio={AspectRatio.horizontal}
+        className='character-thumbnail'
       />
-      <h3>{character.name}</h3>
-      <p>{character.description || 'No description available'}</p>
-      <p># comics: {character.comics.available}</p>
-      <p># series: {character.series.available}</p>
-      <p># stories: {character.stories.available}</p>
+      <div className='character-content'>
+        <h3 className='character-title'>{character.name}</h3>
+        <p className='character-description'>
+          {character.description || 'No description available'}
+        </p>
+        <ChipGroup>
+          <Chip size={Size.s}># comics: {character.comics.available}</Chip>
+          <Chip size={Size.s}># series: {character.series.available}</Chip>
+          <Chip size={Size.s}># stories: {character.stories.available}</Chip>
+        </ChipGroup>
+      </div>
     </div>
   );
 };

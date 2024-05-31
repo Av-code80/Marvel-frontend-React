@@ -13,34 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-body {
-  font-family: Arial, sans-serif;
-}
 
-.character-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.character-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.character-card h3 {
-  margin: 10px 0;
-}
-
-.character-card p {
-  margin: 5px 0;
-}
 
 .search-field {
   width: 100%;
@@ -51,6 +24,12 @@ body {
 .header {
   background-color: #e62429;
   padding: 20px;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .header-logo {
@@ -103,7 +82,6 @@ body {
     padding: 10px 20px;
   }
 }
-
 
 @import './App/App.scss';
 @import './components/Header/index.scss';

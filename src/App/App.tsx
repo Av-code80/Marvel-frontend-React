@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from '../components/Header';
-import SearchResults from '../components/SearchResults';
+import Header from '../Layout/Header';
+import HomePage from '../Pages/HomePage';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -16,9 +16,7 @@ function App() {
       <Header onSearch={handleSearch} />
       <Switch>
         <Route exact path='/'>
-          <section className='lumx-spacing-padding-horizontal-huge'>
-            <SearchResults query={query} />
-          </section>
+          <HomePage query={query} />
         </Route>
       </Switch>
     </Router>
