@@ -12,6 +12,7 @@ interface Character {
   comics: { available: number };
   series: { available: number };
   stories: { available: number };
+  theme:string
 }
 
 interface SearchQueryProps {

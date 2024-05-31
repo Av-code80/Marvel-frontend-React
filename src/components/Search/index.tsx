@@ -12,7 +12,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       onSearch(searchTerm);
-    }, 500);
+    },400);
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, onSearch]);
 
