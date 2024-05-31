@@ -3,7 +3,7 @@ import { get } from '../../api';
 import CharacterCard from '../CharacterCard';
 import Pagination from '../Pagination';
 import './index.scss';
-import { Character } from '../../common/interface';
+import { Character } from '../../common/types/interface';
 
 interface SearchQueryProps {
   query: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chip, ChipGroup, Size } from '@lumx/react';
-import { Character } from '../../common/interface';
+import { Character } from '../../common/types/interface';
 import './index.scss';
 
 interface CharacterCardProps {

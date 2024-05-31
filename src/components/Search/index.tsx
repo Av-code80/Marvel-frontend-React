@@ -2,13 +2,14 @@ import React from 'react';
 import { TextField, Theme } from '@lumx/react';
 import { mdiMagnify } from '@lumx/icons';
 import { useDebouncedSearch } from '../../common/hooks/useDebouncedSearch';
+import './index.scss';
 
 interface SearchProps {
   onSearch: (query: string) => void;
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
-  const { searchTerm, setSearchTerm } = useDebouncedSearch(onSearch);
+  const { searchTerm, setSearchTerm, error } = useDebouncedSearch(onSearch);
 
   return (
     <div className='search-field'>
@@ -19,6 +20,8 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         value={searchTerm}
         icon={mdiMagnify}
         onChange={value => setSearchTerm(value)}
+        hasError={!!error}
+        helper={error || ''}
       />
     </div>
   );

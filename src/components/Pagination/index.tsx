@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { Button, Size } from '@lumx/react';
-import { PaginationProps } from '../../common/interface';
+import { PaginationProps } from '../../common/types/interface';
 import PaginationButton from './PaginationButton';
 import { generatePageNumbers } from './PaginationHelper';
 

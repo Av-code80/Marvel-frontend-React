@@ -5,13 +5,21 @@ export const useDebouncedSearch = (
   delay: number = 400,
 ) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setError('Search term can not be empty');
+      return;
+    }
+    setError(null);
+
     const delayDebounceFn = setTimeout(() => {
       onSearch(searchTerm);
     }, delay);
+    
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, onSearch, delay]);
 
-  return { searchTerm, setSearchTerm };
+  return { searchTerm, setSearchTerm , error};
 };
