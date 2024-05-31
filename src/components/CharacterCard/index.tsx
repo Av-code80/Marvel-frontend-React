@@ -1,5 +1,5 @@
 import React from 'react';
-import { AspectRatio, Chip, ChipGroup, Size, Thumbnail } from '@lumx/react';
+import { Chip, ChipGroup, Size, Thumbnail, AspectRatio } from '@lumx/react';
 import './index.scss';
 
 interface CharacterCardProps {
@@ -17,12 +17,12 @@ interface CharacterCardProps {
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
     <div className='character-card'>
-      <Thumbnail
-        image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-        alt={character.name}
-        aspectRatio={AspectRatio.horizontal}
-        className='character-thumbnail'
-      />
+      <div className='character-thumbnail'>
+        <img
+          src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+          alt={character.name}
+        />
+      </div>
       <div className='character-content'>
         <h3 className='character-title'>{character.name}</h3>
         <p className='character-description'>
