@@ -3,17 +3,7 @@ import { get } from '../../api';
 import CharacterCard from '../CharacterCard';
 import Pagination from '../Pagination';
 import './index.scss';
-
-interface Character {
-  id: number;
-  name: string;
-  description: string;
-  thumbnail: { path: string; extension: string };
-  comics: { available: number };
-  series: { available: number };
-  stories: { available: number };
-  theme:string
-}
+import { Character } from '../../common/interface';
 
 interface SearchQueryProps {
   query: string;
@@ -63,7 +53,6 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
           totalResults={totalResults}
           resultsPerPage={4}
           onPageChange={handlePageChange}
-          theme={undefined}
         />
       )}
     </div>

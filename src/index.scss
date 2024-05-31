@@ -26,23 +26,3 @@ body {
   height: 60px;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-
-  &.active {
-    background-color: #000;
-  }
-
-  &.pagination-nav {
-    padding: 10px 15px;
-    font-weight: bold;
-  }
-}
-
-span {
-  margin: 0 5px;
-  padding: 10px 20px;
-}
