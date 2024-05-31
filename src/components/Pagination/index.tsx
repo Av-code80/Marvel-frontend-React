@@ -3,8 +3,6 @@ import './index.scss';
 import { Button, Emphasis, Size } from '@lumx/react';
 import { PaginationProps } from '../../common/interface';
 
-
-
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalResults,
@@ -48,11 +46,12 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className='pagination'>
+    <div className='pagination' aria-label='Pagination'>
       <Button
         size={Size.s}
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
+        aria-label='Previous Page'
       >
         &lt;
       </Button>
@@ -68,16 +67,16 @@ const Pagination: React.FC<PaginationProps> = ({
             {page}
           </Button>
         ) : (
-          <span key={index}>
-          ...
+          <span key={index} aria-hidden='true'>
+            ...
           </span>
         ),
       )}
       <Button
         size={Size.s}
-        
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
+        aria-label='Next Page'
       >
         &gt;
       </Button>

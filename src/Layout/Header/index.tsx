@@ -3,9 +3,13 @@ import { FlexBox, Alignment } from '@lumx/react';
 import Search from '../../components/Search';
 import './index.scss';
 
-const Header = ({ onSearch }) => {
+interface HeaderProps {
+  onSearch: (query: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   return (
-    <header className=' header'>
+    <header className='header' role='banner'>
       <FlexBox vAlign={Alignment.spaceBetween}>
         <img
           src='/assets/marvel_logo.svg.png'

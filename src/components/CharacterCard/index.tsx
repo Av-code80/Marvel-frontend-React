@@ -4,20 +4,26 @@ import { Character } from '../../common/interface';
 import './index.scss';
 
 interface CharacterCardProps {
-  character: Character
+  character: Character;
 }
 
-const CharacterCard: React.FC<CharacterCardProps> = ({ character}) => {
+const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
   return (
-    <div className='character-card'>
+    <article
+      className='character-card'
+      role='region'
+      aria-labelledby={`character-${character.id}`}
+    >
       <div className='character-thumbnail'>
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-          alt={character.name}
+          alt={`Thumbnail of ${character.name}`}
         />
       </div>
       <div className='character-content'>
-        <h3 className='character-title'>{character.name}</h3>
+        <h3 id={`character-${character.id}`} className='character-title'>
+          {character.name}
+        </h3>
         <p className='character-description'>
           {character.description || 'No description available'}
         </p>
@@ -27,7 +33,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character}) => {
           <Chip size={Size.s}># stories: {character.stories.available}</Chip>
         </ChipGroup>
       </div>
-    </div>
+    </article>
   );
 };
 

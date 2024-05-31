@@ -12,13 +12,14 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       onSearch(searchTerm);
-    },400);
+    }, 400);
     return () => clearTimeout(delayDebounceFn);
   }, [searchTerm, onSearch]);
 
   return (
     <div className='search-field'>
       <TextField
+        id='search'
         theme={Theme.dark}
         placeholder='Search ...'
         value={searchTerm}

@@ -2,10 +2,10 @@ export interface Character {
   id: number;
   name: string;
   description: string;
-  thumbnail: { path: string; extension: string };
-  comics: { available: number };
-  series: { available: number };
-  stories: { available: number };
+  thumbnail: Record<'path' | 'extension', string>;
+  comics: Record<'available', number>;
+  series: Record<'available', number>;
+  stories: Record<'available', number>;
 }
 
 export interface PaginationProps {
@@ -20,4 +20,6 @@ export interface PaginationProps {
   totalResults: number;
   resultsPerPage: number;
   onPageChange: (page: number) => void;
+  theme: any;
 }
+

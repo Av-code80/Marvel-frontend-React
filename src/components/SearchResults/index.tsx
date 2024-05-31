@@ -43,7 +43,7 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
   };
 
   return (
-    <div className='search-results'>
+    <section className='search-results'>
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
       ))}
@@ -53,9 +53,10 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
           totalResults={totalResults}
           resultsPerPage={4}
           onPageChange={handlePageChange}
+          theme={''}
         />
       )}
-    </div>
+    </section>
   );
 };
 
