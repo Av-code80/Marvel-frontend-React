@@ -4,32 +4,20 @@
   align-items: center;
   margin-top: 20px;
 
-
   button {
-    background-color: #e62429;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover:not(:disabled) {
-      background-color: #c51d24;
-    }
-
-    &:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
-    &.active {
-      background-color: #000;
-    }
-  }
-
-  span {
+    color: white;
     margin: 0 5px;
-    padding: 10px 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    &.active {
+      background-color: #7b7676;
+      &.active {
+        background-color: #7b7676;
+        color: #fff;
+      }
+    }
   }
 }

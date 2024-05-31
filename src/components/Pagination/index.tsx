@@ -2,7 +2,6 @@ import React from 'react';
 import './index.scss';
 import { Button, Emphasis, Size } from '@lumx/react';
 
-
 interface PaginationProps {
   currentPage: number;
   totalResults: number;
@@ -72,6 +71,7 @@ const Pagination: React.FC<PaginationProps> = ({
             theme={theme}
             key={index}
             onClick={() => onPageChange(page)}
+            className={currentPage === page ? 'active' : ''}
           >
             {page}
           </Button>
