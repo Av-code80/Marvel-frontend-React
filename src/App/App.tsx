@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { lazy, useState, Suspense } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../Layout/Header';
-import HomePage from '../Pages/HomePage';
+
+const HomePage = lazy(() => import('../Pages/HomePage'));
 
 function App() {
   const [query, setQuery] = useState('');
@@ -14,11 +15,15 @@ function App() {
   return (
     <Router>
       <Header onSearch={handleSearch} />
-      <Switch>
-        <Route exact path='/'>
-          <HomePage query={query} />
-        </Route>
-      </Switch>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path='/'>
+              <HomePage query={query} />
+            </Route>
+          </Switch>
+        </Suspense>
+      </main>
     </Router>
   );
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import './index.scss';
-import { Button, Emphasis, Size } from '@lumx/react';
+import { Button, Size } from '@lumx/react';
 import { PaginationProps } from '../../common/interface';
+import PaginationButton from './PaginationButton';
+import { generatePageNumbers } from './PaginationHelper';
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
@@ -10,43 +12,10 @@ const Pagination: React.FC<PaginationProps> = ({
   onPageChange,
 }) => {
   const totalPages = Math.ceil(totalResults / resultsPerPage);
-
-  const generatePageNumbers = (): (number | string)[] => {
-    const pageNumbers: (number | string)[] = [];
-    const maxPageButtons = 5;
-
-    if (totalPages <= maxPageButtons) {
-      for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-      }
-    } else {
-      const startPage = Math.max(1, currentPage - 2);
-      const endPage = Math.min(totalPages, currentPage + 2);
-
-      if (startPage > 1) {
-        pageNumbers.push(1);
-        if (startPage > 2) {
-          pageNumbers.push('...');
-        }
-      }
-
-      for (let i = startPage; i <= endPage; i++) {
-        pageNumbers.push(i);
-      }
-
-      if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-          pageNumbers.push('...');
-        }
-        pageNumbers.push(totalPages);
-      }
-    }
-
-    return pageNumbers;
-  };
+  const pageNumbers = generatePageNumbers(currentPage, totalPages);
 
   return (
-    <div className='pagination' aria-label='Pagination'>
+    <nav className='pagination' aria-label='Pagination'>
       <Button
         size={Size.s}
         onClick={() => onPageChange(currentPage - 1)}
@@ -55,17 +24,14 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         &lt;
       </Button>
-      {generatePageNumbers().map((page, index) =>
+      {pageNumbers.map((page, index) =>
         typeof page === 'number' ? (
-          <Button
-            emphasis={Emphasis.medium}
-            size={Size.s}
+          <PaginationButton
             key={index}
-            onClick={() => onPageChange(page)}
-            className={currentPage === page ? 'active' : ''}
-          >
-            {page}
-          </Button>
+            page={page}
+            currentPage={currentPage}
+            onPageChange={onPageChange}
+          />
         ) : (
           <span key={index} aria-hidden='true'>
             ...
@@ -80,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         &gt;
       </Button>
-    </div>
+    </nav>
   );
 };
 

@@ -18,6 +18,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         <img
           src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
           alt={`Thumbnail of ${character.name}`}
+          loading='lazy'
         />
       </div>
       <div className='character-content'>
