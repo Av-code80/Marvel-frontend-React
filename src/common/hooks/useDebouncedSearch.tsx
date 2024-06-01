@@ -10,6 +10,7 @@ export const useDebouncedSearch = (
   useEffect(() => {
     if (searchTerm.trim() === '') {
       setError('Search term can not be empty');
+      onSearch('')
       return;
     }
     setError(null);

@@ -1,6 +1,5 @@
 @import '~@lumx/core/scss/lumx.scss';
 @import './App/App.scss';
-@import './Layout/Header/index.scss';
 @import './components/Search/index.scss';
 @import './Pages/HomePage/index.scss';
 
@@ -20,6 +19,7 @@ body {
 .header {
   background-color: lumx-color-variant('primary', 'N');
   padding: 20px;
+  border: 4px solid #1546c1;
 }
 
 .header-logo {

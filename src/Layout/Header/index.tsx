@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlexBox, Alignment } from '@lumx/react';
 import Search from '../../components/Search';
-import './index.scss';
+
 
 interface HeaderProps {
   onSearch: (query: string) => void;

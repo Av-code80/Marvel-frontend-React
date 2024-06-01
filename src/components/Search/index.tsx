@@ -20,6 +20,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         value={searchTerm}
         icon={mdiMagnify}
         onChange={value => setSearchTerm(value)}
+        clearButtonProps={{ label: 'Clear' }}
         hasError={!!error}
         helper={error || ''}
       />
