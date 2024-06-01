@@ -21,9 +21,9 @@ export const fetchCharacters = async (
     return { results, total };
   } catch (error) {
     if (axios.isCancel(error)) {
-      console.log('Request canceled');
-    } else {
       console.error('Error fetching characters:', error);
+    } else {
+      throw new Error('Request canceled');
     }
     return { results: [], total: 0 };
   }

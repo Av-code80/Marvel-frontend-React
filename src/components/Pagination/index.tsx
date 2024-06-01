@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import { Button, Size } from '@lumx/react';
+import { Button, Emphasis, Size } from '@lumx/react';
 import { PaginationProps } from '../../common/types/interface';
 import PaginationButton from './PaginationButton';
 import { generatePageNumbers } from './PaginationHelper';
@@ -24,16 +24,16 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         &lt;
       </Button>
-      {pageNumbers.map((page, index) =>
+      {pageNumbers.map((page) =>
         typeof page === 'number' ? (
           <PaginationButton
-            key={index}
+            key={page}
             page={page}
             currentPage={currentPage}
             onPageChange={onPageChange}
           />
         ) : (
-          <span key={index} aria-hidden='true'>
+          <span key={page} aria-hidden='true'>
             ...
           </span>
         ),

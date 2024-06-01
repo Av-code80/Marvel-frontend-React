@@ -9,10 +9,9 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ query }) => {
   return (
     <section
-      className={`lumx-spacing-padding-horizontal-huge home-page ${!query && 'query' }`}
-    >
+      className='lumx-spacing-padding-horizontal-huge home-page'>
       {!query && (
-        <h2 className='homepage-text'>Type your favorite character ↗️</h2>
+        <h3 className='homepage-text'>Type your favorite character ↗️</h3>
       )}
       <SearchResults query={query} />
     </section>

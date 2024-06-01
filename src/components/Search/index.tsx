@@ -9,7 +9,7 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
-  const { searchTerm, setSearchTerm, error } = useDebouncedSearch(onSearch);
+  const { searchTerm, setSearchTerm} = useDebouncedSearch(onSearch);
 
   return (
     <div className='search-field'>
@@ -21,8 +21,6 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         icon={mdiMagnify}
         onChange={value => setSearchTerm(value)}
         clearButtonProps={{ label: 'Clear' }}
-        hasError={!!error}
-        helper={error || ''}
       />
     </div>
   );

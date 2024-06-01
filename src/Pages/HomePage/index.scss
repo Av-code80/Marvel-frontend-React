@@ -1,17 +1,12 @@
 .home-page {
   background: linear-gradient(to right, #97c7e9, #edddda, #eeeede);
-  height: auto;
-}
-
-.query {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .homepage-text {
   color: #df2a4b;
-  animation: move 1s infinite alternate;
+  animation: move 2s infinite alternate;
+  padding: 50px;
+  text-align: center;
 }
 
 @keyframes move {
