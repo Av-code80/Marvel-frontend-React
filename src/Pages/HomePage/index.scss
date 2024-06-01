@@ -1,24 +1,24 @@
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   background: linear-gradient(to right, #97c7e9, #edddda, #eeeede);
-
+  height: auto;
 }
 
 .query {
-  color: #df2a4b;
-  text-align: center;
-  animation: move 2s infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.homepage-text {
+  color: #df2a4b;
+  animation: move 1s infinite alternate;
 }
 
 @keyframes move {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-10px);
   }

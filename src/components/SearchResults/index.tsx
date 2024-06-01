@@ -3,6 +3,7 @@ import CharacterCard from '../CharacterCard';
 import Pagination from '../Pagination';
 import './index.scss';
 import { Character } from '../../common/types/interface';
+import useConcurrencyController from '../../common/hooks/useConcurrencyController';
 import { fetchCharacters } from '../../api/charactersServices';
 
 interface SearchQueryProps {
@@ -14,10 +15,18 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
   const [totalResults, setTotalResults] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const getSignal = useConcurrencyController();
+
   useEffect(() => {
     const loadCharacters = async () => {
+      const signal = getSignal();
+
       if (query) {
-        const { results, total } = await fetchCharacters(query, currentPage);
+        const { results, total } = await fetchCharacters(
+          query,
+          currentPage,
+          signal,
+        );
         setCharacters(results);
         setTotalResults(total);
       } else {
