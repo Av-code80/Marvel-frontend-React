@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.scss';
-import { Button, Emphasis, Size } from '@lumx/react';
+import { Alignment, Button, Emphasis, FlexBox, Size } from '@lumx/react';
 import { PaginationProps } from '../../common/types/interface';
 import PaginationButton from './PaginationButton';
 import { generatePageNumbers } from './PaginationHelper';
+import './index.scss';
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
@@ -13,9 +13,15 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const totalPages = Math.ceil(totalResults / resultsPerPage);
   const pageNumbers = generatePageNumbers(currentPage, totalPages);
-
   return (
-    <nav className='pagination' aria-label='Pagination'>
+    <FlexBox
+      as='section'
+      orientation='horizontal'
+      hAlign={Alignment.center}
+      vAlign={Alignment.center}
+      className='pagination'
+      aria-label='Pagination'
+    >
       <Button
         size={Size.s}
         onClick={() => onPageChange(currentPage - 1)}
@@ -24,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         &lt;
       </Button>
-      {pageNumbers.map((page) =>
+      {pageNumbers.map(page =>
         typeof page === 'number' ? (
           <PaginationButton
             key={page}
@@ -46,7 +52,7 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         &gt;
       </Button>
-    </nav>
+    </FlexBox>
   );
 };
 

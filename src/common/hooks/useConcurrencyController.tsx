@@ -1,5 +1,9 @@
 import { useRef, useEffect } from 'react';
 
+/**
+ * Custom hook to manage & control concurrent requests
+ * @returns {() => AbortSignal} - returns AbortSignal for current request
+ */
 const useConcurrencyController = () => {
   const controllerRef = useRef<AbortController | null>(null);
 

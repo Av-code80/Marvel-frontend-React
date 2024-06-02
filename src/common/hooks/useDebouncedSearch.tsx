@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * Custom hook for handling debounced search input
+ */
+
 export const useDebouncedSearch = (
   onSearch: (query: string) => void,
   delay: number = 400,

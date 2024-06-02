@@ -2,6 +2,15 @@ import axios from 'axios';
 import { get } from '.';
 import { Character } from '../common/types/interface';
 
+/**
+ * Fetches characters list from the API based query and pagination
+ * @param {string} query - characters by name
+ * @param {number} page - The current page number for pagination
+ * @param {AbortSignal} signal - To abort the request if needed
+ * @returns {Promise<{ results: Character[]; total: number }>} - Promise to resolves provide results & total number of characters
+ * @throws {Error} - Error: canceled req || another error occurs
+ */
+
 export const fetchCharacters = async (
   query: string,
   page: number,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FlexBox, Text } from '@lumx/react';
 import SearchResults from '../../components/SearchResults';
 import './index.scss';
 
@@ -8,13 +9,14 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ query }) => {
   return (
-    <section
-      className='lumx-spacing-padding-horizontal-huge home-page'>
+    <FlexBox className='lumx-spacing-padding-horizontal-huge home-page'>
       {!query && (
-        <h3 className='homepage-text'>Type your favorite character ↗️</h3>
+        <Text as='h3' color='red' className='homepage-text'>
+          Type your favorite Superhero ↗️
+        </Text>
       )}
       <SearchResults query={query} />
-    </section>
+    </FlexBox>
   );
 };
 

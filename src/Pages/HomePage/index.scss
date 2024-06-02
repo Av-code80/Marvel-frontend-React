@@ -3,10 +3,9 @@
 }
 
 .homepage-text {
-  color: #df2a4b;
-  animation: move 2s infinite alternate;
   padding: 50px;
   text-align: center;
+  animation: move 2s infinite alternate;
 }
 
 @keyframes move {

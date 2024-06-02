@@ -1,6 +1,7 @@
 import { lazy, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../Layout/Header';
+import { FlexBox } from '@lumx/react';
 
 const HomePage = lazy(() => import('../Pages/HomePage'));
 
@@ -14,7 +15,7 @@ function App() {
   return (
     <Router>
       <Header onSearch={handleSearch} />
-      <main>
+      <FlexBox as='main'>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path='/'>
@@ -22,7 +23,7 @@ function App() {
             </Route>
           </Switch>
         </Suspense>
-      </main>
+      </FlexBox>
     </Router>
   );
 }

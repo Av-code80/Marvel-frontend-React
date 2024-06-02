@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+/**
+ * Creates an axios instance with predefined configuration
+ * @type {import('axios').AxiosInstance}
+ * @type {{ apikey: string }} - Base query parameters
+ */
+
 const instance = axios.create({
   baseURL: 'https://gateway.marvel.com/v1/public/',
   timeout: 1000,

@@ -31,6 +31,5 @@ export const generatePageNumbers = (
       pageNumbers.push(totalPages);
     }
   }
-
   return pageNumbers;
 };

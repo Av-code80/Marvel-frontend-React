@@ -1,7 +1,6 @@
 import React from 'react';
-import { FlexBox, Alignment } from '@lumx/react';
+import { FlexBox, Alignment, ImageBlock } from '@lumx/react';
 import Search from '../../components/Search';
-
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -10,10 +9,14 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   return (
     <header className='header' role='banner'>
-      <FlexBox vAlign={Alignment.spaceBetween}>
-        <img
-          src='/assets/marvel_logo.svg.png'
+      <FlexBox
+        as='div'
+        vAlign={Alignment.spaceBetween}
+        hAlign={Alignment.center}
+      >
+        <ImageBlock
           alt='Marvel'
+          image='/assets/marvel_logo.svg.png'
           className='header-logo'
         />
         <Search onSearch={onSearch} />

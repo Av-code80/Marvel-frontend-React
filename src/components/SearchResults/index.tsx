@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import CharacterCard from '../CharacterCard';
 import Pagination from '../Pagination';
-import './index.scss';
 import { Character } from '../../common/types/interface';
 import useConcurrencyController from '../../common/hooks/useConcurrencyController';
 import { fetchCharacters } from '../../api/charactersServices';
+import { Alignment, FlexBox } from '@lumx/react';
+import './index.scss';
+
+/**
+ * Display character search results with pagination:
+ * @param {SearchQueryProps} props - The properties object
+ * @param {string} props.query - The search query string
+ */
 
 interface SearchQueryProps {
   query: string;
@@ -41,9 +48,13 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
   return (
-    <section className='search-results'>
+    <FlexBox
+      as='section'
+      orientation='vertical'
+      vAlign={Alignment.spaceBetween}
+      className='search-results'
+    >
       {characters.map(character => (
         <CharacterCard key={character.id} character={character} />
       ))}
@@ -56,7 +67,7 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
           theme={''}
         />
       )}
-    </section>
+    </FlexBox>
   );
 };
 
