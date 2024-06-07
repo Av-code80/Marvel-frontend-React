@@ -1,7 +1,6 @@
 import React from 'react';
 import { FlexBox, Text } from '@lumx/react';
 import SearchResults from '../../components/SearchResults';
-import './index.scss';
 
 interface HomePageProps {
   query: string;

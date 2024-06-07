@@ -1,7 +1,8 @@
 import { lazy, useState, Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from '../Layout/Header';
-import { FlexBox } from '@lumx/react';
+import { FlexBox, ProgressCircular } from '@lumx/react';
 
 const HomePage = lazy(() => import('../Pages/HomePage'));
 
@@ -16,12 +17,12 @@ function App() {
     <Router>
       <Header onSearch={handleSearch} />
       <FlexBox as='main'>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route exact path='/'>
+        <Suspense fallback={<ProgressCircular />}>
+          <Router>
+            <Route path='/'>
               <HomePage query={query} />
             </Route>
-          </Switch>
+          </Router>
         </Suspense>
       </FlexBox>
     </Router>

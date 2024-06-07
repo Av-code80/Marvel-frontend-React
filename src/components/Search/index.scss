@@ -1,6 +1,8 @@
+@import '~@lumx/core/scss/lumx.scss';
+
 .search-field {
   width: 100%;
-  max-width: 300px;
+  max-width: calc($lumx-size-xxl + $lumx-size-m);
   margin: 2px;
-  background-color: white;
+  background-color: $lumx-color-light-N;
 }

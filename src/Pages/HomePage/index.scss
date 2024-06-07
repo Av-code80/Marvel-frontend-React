@@ -1,9 +1,12 @@
+@import '~@lumx/core/scss/lumx.scss';
+
 .home-page {
   background: linear-gradient(to right, #97c7e9, #edddda, #eeeede);
 }
 
 .homepage-text {
-  padding: 50px;
+  padding: calc(2 * $lumx-spacing-unit-huge);
+  height: 100vh;
   text-align: center;
   animation: move 2s infinite alternate;
 }
@@ -14,6 +17,6 @@
   }
 
   100% {
-    transform: translateY(-10px);
+    transform: translateY($lumx-size-xxs);
   }
 }

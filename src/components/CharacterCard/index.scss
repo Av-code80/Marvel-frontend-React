@@ -1,25 +1,27 @@
+@import '~@lumx/core/scss/lumx.scss';
+
 .character-card {
-  border: 2px solid #245be7;
-  padding: 40px;
-  margin-top: 10px;
+  border: 2px solid $lumx-color-blue-D1;
+  padding: $lumx-size-xs calc($lumx-size-m - 6px);
+  margin-top: $lumx-size-xxs;
   border-radius: 6px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: $lumx-color-light-N;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   word-break: break-all;
 }
 @media (max-width: 800px) {
   .character-card {
-    flex: 0 0 270px;
-    overflow: scroll;
+    flex: 2;
     word-break: break-all;
+    overflow: scroll;
   }
 }
 .character-thumbnail {
-  flex: 0 0 200px;
-  height: 150px;
+  flex: 0 0 calc($lumx-size-xxl - 55px);
+  height: calc($lumx-size-xl + 52px);
   overflow: hidden;
-  margin-right: 20px;
+  margin-right: $lumx-size-xs;
 }
 
 .character-thumbnail img {
@@ -33,21 +35,17 @@
   transform: scale(1.2);
 }
 
-.character-content {
-  flex: 1;
-}
-
 .character-title {
   margin: 0;
-  font-size: 1.5em;
+  font-size: $lumx-size-s;
 }
 
 .character-description {
-  margin: 10px 0;
+  margin: $lumx-size-xxs 0;
 }
 
 .lumx-chip-group {
-  margin-top: 10px;
+  margin-top: $lumx-size-xxs;
 }
 
 .span {

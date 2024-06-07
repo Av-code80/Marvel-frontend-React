@@ -1,24 +1,26 @@
+@import '~@lumx/core/scss/lumx.scss';
+
 .pagination {
-  margin-top: 20px;
+  margin-top: $lumx-spacing-unit-big;
 
   button {
     cursor: pointer;
     color: white;
-    margin: 0 5px;
-    height: 40px;
-    width: 40px;
+    margin: $lumx-spacing-unit-tiny;
+    height: $lumx-size-m;
+    width: $lumx-size-m;
     border-radius: 50%;
     transition: background-color 0.3s;
     &.active {
-      background-color: #0a3785;
+      background-color: $lumx-color-blue-D2;
       &.active {
-        background-color: #0a3785;
-        color: #fff;
+        background-color: $lumx-color-blue-D2;
+        color: $lumx-color-light-N;
       }
     }
   }
   span {
-    margin: 0 2px;
-    padding: 6px;
+    margin: $lumx-spacing-unit-tiny;
+    padding: $lumx-spacing-unit-regular;
   }
 }

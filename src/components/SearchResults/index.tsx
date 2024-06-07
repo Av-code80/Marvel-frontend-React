@@ -5,7 +5,6 @@ import { Character } from '../../common/types/interface';
 import useConcurrencyController from '../../common/hooks/useConcurrencyController';
 import { fetchCharacters } from '../../api/charactersServices';
 import { Alignment, FlexBox } from '@lumx/react';
-import './index.scss';
 
 /**
  * Display character search results with pagination:
@@ -64,7 +63,6 @@ const SearchResults: React.FC<SearchQueryProps> = ({ query }) => {
           totalResults={totalResults}
           resultsPerPage={4}
           onPageChange={handlePageChange}
-          theme={''}
         />
       )}
     </FlexBox>

@@ -1,6 +1,6 @@
+import { Character } from './../common/types/interface';
 import axios from 'axios';
 import { get } from '.';
-import { Character } from '../common/types/interface';
 
 /**
  * Fetches characters list from the API based query and pagination

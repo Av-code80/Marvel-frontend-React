@@ -36,7 +36,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
         alt={`Thumbnail of ${character.name}`}
         loading='lazy'
       />
-      <FlexBox as='div' className='character-content'>
+      <FlexBox as='div'>
         <Text
           as='h3'
           id={`character-${character.id}`}

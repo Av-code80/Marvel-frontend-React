@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alignment, FlexBox, TextField, Theme } from '@lumx/react';
+import { FlexBox, TextField, Theme } from '@lumx/react';
 import { mdiMagnify } from '@lumx/icons';
 import { useDebouncedSearch } from '../../common/hooks/useDebouncedSearch';
 import './index.scss';

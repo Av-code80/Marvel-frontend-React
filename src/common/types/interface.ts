@@ -13,6 +13,5 @@ export interface PaginationProps {
   totalResults: number;
   resultsPerPage: number;
   onPageChange: (page: number) => void;
-  theme: any;
 }
 

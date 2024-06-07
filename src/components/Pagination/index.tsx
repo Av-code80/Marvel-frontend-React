@@ -13,6 +13,9 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const totalPages = Math.ceil(totalResults / resultsPerPage);
   const pageNumbers = generatePageNumbers(currentPage, totalPages);
+
+  let ellipsisCount = 0; // To ensure unique keys for ellipsis
+
   return (
     <FlexBox
       as='section'
@@ -39,7 +42,7 @@ const Pagination: React.FC<PaginationProps> = ({
             onPageChange={onPageChange}
           />
         ) : (
-          <span key={page} aria-hidden='true'>
+          <span key={`ellipsis-${ellipsisCount++}`} aria-hidden='true'>
             ...
           </span>
         ),
