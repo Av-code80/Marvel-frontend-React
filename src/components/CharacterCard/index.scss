@@ -9,6 +9,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   word-break: break-all;
+  transition: transform 0.3s ease-in-out scale(1);
+  &:hover {
+    transform: scale(1.01);
+  }
 }
 @media (max-width: 800px) {
   .character-card {

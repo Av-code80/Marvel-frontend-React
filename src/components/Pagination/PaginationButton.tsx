@@ -18,6 +18,7 @@ const PaginationButton: React.FC<PaginationButtonProps> = ({
       size={Size.s}
       onClick={() => onPageChange(page)}
       className={currentPage === page ? 'active' : ''}
+      isSelected
       aria-current={currentPage === page ? 'page' : undefined}
     >
       {page}

@@ -16,7 +16,12 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   const { searchTerm, setSearchTerm } = useDebouncedSearch(onSearch);
 
   return (
-    <FlexBox as='div' className='search-field'>
+    <FlexBox
+      as='div'
+      className='search-field'
+      role='search'
+      aria-label='Search component'
+    >
       <TextField
         id='search'
         theme={Theme.light}
@@ -25,6 +30,8 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         icon={mdiMagnify}
         onChange={value => setSearchTerm(value)}
         clearButtonProps={{ label: 'Clear' }}
+        aria-label='Search'
+        role='searchbox'
       />
     </FlexBox>
   );

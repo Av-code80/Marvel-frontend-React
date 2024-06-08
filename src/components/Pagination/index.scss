@@ -12,9 +12,9 @@
     border-radius: 50%;
     transition: background-color 0.3s;
     &.active {
-      background-color: $lumx-color-blue-D2;
+      background-color: $lumx-color-red-N;
       &.active {
-        background-color: $lumx-color-blue-D2;
+        background-color: $lumx-color-red-N;
         color: $lumx-color-light-N;
       }
     }
