@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FlexBox, TextField, Theme } from '@lumx/react';
 import { mdiMagnify } from '@lumx/icons';
 import { useDebouncedSearch } from '../../common/hooks/useDebouncedSearch';
@@ -13,7 +13,11 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
-  const { searchTerm, setSearchTerm } = useDebouncedSearch(onSearch);
+  const { searchTerm, setSearchTerm, hasError } = useDebouncedSearch(onSearch);
+
+  const handleChange = (value: string) => {
+    setSearchTerm(value);
+  };
 
   return (
     <FlexBox
@@ -28,10 +32,12 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
         placeholder='Search ...'
         value={searchTerm}
         icon={mdiMagnify}
-        onChange={value => setSearchTerm(value)}
+        onChange={handleChange}
         clearButtonProps={{ label: 'Clear' }}
         aria-label='Search'
         role='searchbox'
+        hasError={hasError}
+        helper={hasError && 'Type more than two letters and without number'}
       />
     </FlexBox>
   );
