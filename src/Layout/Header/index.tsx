@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
         hAlign={Alignment.center}
       >
         <ImageBlock
-          alt='Marvel'
+          alt='Marvel logo'
           image='/assets/marvel_logo.svg.png'
           className='header-logo'
         />

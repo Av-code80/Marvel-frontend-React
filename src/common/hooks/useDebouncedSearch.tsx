@@ -9,7 +9,6 @@ export const useDebouncedSearch = (
 ) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [hasError, setHasError] = useState(false);
-
   useEffect(() => {
     const isValid = /^[A-Za-z]{3,}$/.test(searchTerm);
     setHasError(!isValid && searchTerm.length > 0);
